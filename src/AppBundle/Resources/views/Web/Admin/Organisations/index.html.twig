@@ -1,0 +1,17 @@
+{% extends 'AppBundle:admin:layout.html.twig' %}
+
+{% block body %}
+    <h1>Organisations list</h1>
+    <hr>
+
+    {% for organisation in organisations %}
+        <h3><a href="{{ path('admin_organisations_page', { id: organisation.id }) }}">{{ organisation.CompanyName }}</a></h3>
+
+    {% endfor %}
+
+
+{% endblock %}
+
+{% block title %}
+    Organic Standard - Organisations
+{% endblock %}

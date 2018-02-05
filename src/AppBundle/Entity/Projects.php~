@@ -1,0 +1,51 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: or_os
+ * Date: 06.12.2017
+ * Time: 12:54
+ */
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="projects")
+ */
+class Projects
+{
+
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Organisations")
+     */
+    private $operator;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Organisations")
+     */
+    private $mandator;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Organisations")
+     */
+    private $subcontractor;
+
+
+
+    public function __construct() {
+        $this->subcontractor = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

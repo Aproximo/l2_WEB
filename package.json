@@ -1,0 +1,21 @@
+{
+  "name": "symfony",
+  "version": "2.0.0",
+  "description": "<<<<<<< HEAD\r Symfony Standard Edition\r ========================",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "console.log(\"Hello world\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hub.com/Aproximo/Symfony-studying.git)"
+  },
+  "author": "Aproximo",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}

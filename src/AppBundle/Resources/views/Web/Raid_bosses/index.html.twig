@@ -1,0 +1,24 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+
+<h1>RB list</h1>
+<hr>
+
+    <table>
+        <tbody>
+{% for rb in rb %}
+    <tr>
+<td><a href="{{ path('raid_boss', {id: rb.id}) }}">{{ rb.npc.name }}</a></td>
+        <td>{% if rb.respawn_time != 0 %}<span style="color:red">Dead</span> {% else %} <span style="color:green">Alive</span> {% endif %}</td>
+    </tr>
+{% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+{% block title %}
+    RaidBoses list
+{% endblock %}

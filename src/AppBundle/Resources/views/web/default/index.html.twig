@@ -1,0 +1,17 @@
+{% extends 'AppBundle::index.html.twig' %}
+
+{% block body %}
+<h2>News</h2>
+<hr/>
+
+{% for article in articles %}
+<h3><a href="{{ path('homepage_article', {id: article.id}) }}">{{ article.title }}</a></h3>
+{{ article.content }}
+
+{% endfor %}
+{% endblock %}
+
+
+{% block title %}
+    Home
+{% endblock %}

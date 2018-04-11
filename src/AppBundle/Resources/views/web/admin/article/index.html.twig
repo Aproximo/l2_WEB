@@ -1,0 +1,14 @@
+{% extends 'AppBundle:admin:index.html.twig' %}
+
+{% block body %}
+<h1>Articles list</h1>
+    <hr>
+
+    {% for article in articles %}
+        <h3><a href="{{ path('admin_article_edit', {id: article.id}) }}">{{ article.title }}</a></h3>
+        {#{{ article.content }}#}
+
+    {% endfor %}
+
+{% endblock %}
+

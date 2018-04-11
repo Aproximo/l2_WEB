@@ -6,9 +6,16 @@ p {
   color: #e2dfd7;
   font-family: sans-serif;
 }
+hr {
+  border: 0;
+  width: 80%;
+  height: 5px;
+  background-color: white;
+}
 body {
   margin: 0px;
   padding: 0px;
+  color: #e2dfd7;
 }
 button {
   border: none;

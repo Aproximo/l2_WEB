@@ -1,7 +1,7 @@
 {% extends 'AppBundle:user:index.html.twig' %}
 
 {% block body %}
-<h1>Hello, {{ user.email }}</h1>
+<h2>Hello, {{ user.email }}</h2>
     <hr>
     <a href="{{ path('user_organisation') }}">My Organisation {{ organisation.CompanyName }}</a>
 {% endblock %}

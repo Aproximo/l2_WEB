@@ -1,7 +1,7 @@
-{% extends 'AppBundle:admin:index.html.twig' %}
+{% extends 'AppBundle::index.html.twig' %}
 
 {% block body %}
-<h1>Articles list</h1>
+<h2>Articles list</h2>
     <hr>
 
     {% for article in articles %}
@@ -11,4 +11,3 @@
     {% endfor %}
 
 {% endblock %}
-

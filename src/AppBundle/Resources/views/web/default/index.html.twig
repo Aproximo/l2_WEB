@@ -4,14 +4,13 @@
 <h2>News</h2>
 <hr/>
 
-{% for article in articles %}
-<h3><a href="{{ path('homepage_article', {id: article.id}) }}">{{ article.title }}</a></h3>
-{{ article.content }}
+{% if articles is empty %}
+  <h3 class="center-text">No news available</h3>
+{% else %}
+  {% for article in articles %}
+    <h3><a href="{{ path('homepage_article', {id: article.id}) }}">{{ article.title }}</a></h3>
+    <p>{{ article.content }}</p>
+  {% endfor %}
+{% endif %}
 
-{% endfor %}
-{% endblock %}
-
-
-{% block title %}
-    Home
 {% endblock %}

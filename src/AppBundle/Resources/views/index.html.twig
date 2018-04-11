@@ -8,7 +8,6 @@
 
     <title>Seresin</title>
 
-    <link href="{{ asset('/bundles/app/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/bundles/app/css/style.css') }}" rel="stylesheet">
   </head>
 
@@ -18,10 +17,10 @@
         <a href="{{ path('homepage') }}"><button class="menu-item {% if app.request.attributes.get('_route') starts with 'news' %} active {% endif %}">News</button></a>
         <a href="{{ path('user_login') }}"><button class="menu-item">Account</button></a>
         <a href="{{ path('downloads') }}"><button class="menu-item">Download</button></a>
-        <a href="{{ path('about') }}"><button class="menu-item">About</button></a>          
+        <a href="{{ path('about') }}"><button class="menu-item">About</button></a>
         <a href="#"><button class="menu-item">Forum</button></a>
       </div>
-    
+
     <div class="container">
       <div>
         {% for flash_message in app.session.flashBag.get('success') %}
@@ -39,7 +38,6 @@
   </div>
 
   <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/esm/popper-utils.js"></script>
 
 </body>
 </html>

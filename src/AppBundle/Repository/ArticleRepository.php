@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  public function findAllByLocale($locale) {
+    $qb = $this->createQueryBuilder('article');
+    $qb->select('article')
+       ->where('article.lang = :locale')
+       ->orderBy('article.updated', 'DESC')
+       ->setParameter('locale', $locale);
+    return $qb->getQuery()->execute();
+  }
+
 }

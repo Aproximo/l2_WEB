@@ -25,14 +25,11 @@ class ArticleController extends Controller
      * @Route("/admin/article", name="admin_article_list")
      * @Template()
      */
-    public function indexAction(){
-
+    public function indexAction() {
         $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
-        $articles = $repo->findAll();
-
+        $articles = $repo->findAllByLocale($this->get('request')->getLocale());
         return compact('articles');
     }
-
 
     /**
      *
@@ -43,7 +40,6 @@ class ArticleController extends Controller
      * @Template()
      */
     public function editAction(Request $request){
-
         $id = $request->get('id');
         $doctrine = $this->get('doctrine');
         $article = $doctrine->getRepository('AppBundle:Article')->find($id);
@@ -64,15 +60,7 @@ class ArticleController extends Controller
             $this->addFlash('success', "Saved");
             return $this->redirectToRoute('article_edit', ['id' => $id]);
         }
-
-              return ['article' => $article, 'form' => $form->createView()];
+        return ['article' => $article, 'form' => $form->createView()];
     }
-
-//        $article->setTitle('Symfony start')->setContent('Some text bla bla');
-//
-//        $em = $this->get('doctrine')->getManager();
-//
-//        $em->persist($article);
-//        $em->flush();
 
 }

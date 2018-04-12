@@ -34,14 +34,38 @@ class Article
      */
     private $content;
 
-
+    /**
+     * @ORM\Column(type="string", length=2)
+     * @Assert\NotBlank(message="specify article language")
+     */
+    private $lang;
 
     /**
+     * @var datetime $created
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
+     * @ORM\Column(type="datetime")
      */
-    private $category;
+    private $created;
 
+    /**
+     * @var datetime $updated
+     *
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+    public function __construct() {
+        $this->created = new \DateTime();
+        $this->updated = new \DateTime();
+    }
+
+    public function getCreated() {
+      return $this->created;
+    }
+
+    public function getUpdated() {
+      return $this-updated;
+    }
 
     /**
      * Get id
@@ -101,27 +125,11 @@ class Article
         return $this->content;
     }
 
-    /**
-     * Set category
-     *
-     * @param \AppBundle\Entity\Category $category
-     *
-     * @return Accounts
-     */
-    public function setCategory(\AppBundle\Entity\Category $category = null)
-    {
-        $this->category = $category;
+    public function getLang() { return $this->lang; }
 
-        return $this;
+    public function setLang($lang) {
+       $this->lang = $lang;
+       return $this;
     }
 
-    /**
-     * Get category
-     *
-     * @return \AppBundle\Entity\Category
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
 }

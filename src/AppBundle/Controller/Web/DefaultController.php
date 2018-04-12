@@ -18,13 +18,11 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      * @Template()
      */
-    public function indexAction(){
-
-        $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
-        $articles = $repo->findAll();
-
-        return compact('articles');
-    }
+     public function indexAction(Request $request) {
+         $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
+         $articles = $repo->findAllByLocale($request->getLocale());
+         return compact('articles');
+     }
 
     /**
      *

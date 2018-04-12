@@ -14,11 +14,11 @@
   <body>
     <div class="background-container">
       <div class="menu">
-        <a href="{{ path('homepage') }}"><button class="menu-item {% if app.request.attributes.get('_route') starts with 'news' %} active {% endif %}">News</button></a>
-        <a href="{{ path('user_login') }}"><button class="menu-item">Account</button></a>
-        <a href="{{ path('downloads') }}"><button class="menu-item">Download</button></a>
-        <a href="{{ path('about') }}"><button class="menu-item">About</button></a>
-        <a href="#"><button class="menu-item">Forum</button></a>
+        <a href="{{ path('homepage') }}"><button class="menu-item {% if app.request.attributes.get('_route') starts with 'news' %} active {% endif %}">{{'News'|trans}}</button></a>
+        <a href="{{ path('user_login') }}"><button class="menu-item">{{'Account'|trans}}</button></a>
+        <a href="{{ path('downloads') }}"><button class="menu-item">{{'Downloads'|trans}}</button></a>
+        <a href="{{ path('about') }}"><button class="menu-item">{{'About'|trans}}</button></a>
+        <a href="#"><button class="menu-item">{{'Forum'|trans}}</button></a>
       </div>
 
     <div class="container">

@@ -1,3 +1,7 @@
-app_web:
+app_web_locale:
     resource: '@AppBundle/Controller/Web'
     type: annotation
+    requirements:
+      _locale: en|ru|
+    prefix:   /{_locale}
+    defaults: { _locale: en}

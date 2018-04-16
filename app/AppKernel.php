@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new LoginRecaptcha\Bundle\LoginRecaptchaBundle(),
 //            new FOS\UserBundle\FOSUserBundle(),
         ];
 

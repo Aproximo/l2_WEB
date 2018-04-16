@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "887cd8638c93703be115acd3d58e6780",
+    "content-hash": "370a5a77ffa113bcdc01bc5c8ca9f4e6",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1181,6 +1181,51 @@
             "time": "2018-03-08T08:59:27+00:00"
         },
         {
+            "name": "google/recaptcha",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/recaptcha.git",
+                "reference": "5a56d15ca10a7b75158178752b2ad8f755eb4f78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/5a56d15ca10a7b75158178752b2ad8f755eb4f78",
+                "reference": "5a56d15ca10a7b75158178752b2ad8f755eb4f78",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Client library for reCAPTCHA, a free service that protect websites from spam and abuse.",
+            "homepage": "http://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "recaptcha",
+                "spam"
+            ],
+            "time": "2017-03-09T18:44:34+00:00"
+        },
+        {
             "name": "gregwar/captcha",
             "version": "v1.1.5",
             "source": {
@@ -1855,6 +1900,56 @@
                 "type"
             ],
             "time": "2015-07-25T16:39:46+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "psr/cache",
@@ -2983,6 +3078,54 @@
                 "framework"
             ],
             "time": "2018-01-29T11:42:20+00:00"
+        },
+        {
+            "name": "syspay/login-recaptcha-bundle",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/syspay/login-recaptcha-bundle.git",
+                "reference": "b6d41c230198f96801f5feddb8450c9ba0cdca1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/syspay/login-recaptcha-bundle/zipball/b6d41c230198f96801f5feddb8450c9ba0cdca1f",
+                "reference": "b6d41c230198f96801f5feddb8450c9ba0cdca1f",
+                "shasum": ""
+            },
+            "require": {
+                "google/recaptcha": "^1.1",
+                "php": ">=5.5.1",
+                "predis/predis": "^1.0",
+                "symfony/framework-bundle": "~3.0",
+                "symfony/security-bundle": "~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6",
+                "symfony/symfony": "~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "LoginRecaptcha\\Tests\\": "tests/",
+                    "LoginRecaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel Caruana",
+                    "email": "gabb1995@gmail.com",
+                    "homepage": "http://github.com/gabb1995",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Login Recaptcha Bundle for Symfony 3",
+            "homepage": "https://github.com/syspay/login-recaptcha-bundle",
+            "time": "2018-03-07T08:39:55+00:00"
         },
         {
             "name": "twig/twig",

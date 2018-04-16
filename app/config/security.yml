@@ -31,8 +31,8 @@ security:
               anonymous: ~
               provider: user_provider
               form_login_captcha:
-                  login_path: /en/login
-                  check_path: /en/login
+                  login_path: user_login
+                  check_path: user_login
                   username_parameter: "login_form[username]"
                   password_parameter: "login_form[password]"
                   csrf_parameter: "login_form[_token]"

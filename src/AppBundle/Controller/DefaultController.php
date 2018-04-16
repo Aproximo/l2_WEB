@@ -19,7 +19,7 @@ class DefaultController extends Controller
      * @Template()
      */
      public function indexAction(Request $request) {
-         $repo = $this->get('doctrine')->getManager('web')->getRepository('AppBundle:Article');
+         $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
          $articles = $repo->findAllByLocale($request->getLocale());
          return compact('articles');
      }
@@ -33,7 +33,7 @@ class DefaultController extends Controller
      * @Template()
      */
     public function showAction($id){
-        $repo = $this->get('doctrine')->getManager('login')->getRepository('AppBundle:Article');
+        $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
         $article = $repo->find($id);
 
         if(!$article){

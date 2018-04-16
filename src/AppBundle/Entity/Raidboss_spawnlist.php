@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\Raidboss_spawnlistRepository")
- * @ORM\Table(name="raidboss_spawnlist")
+ * @ORM\Table(name="l2jgs.raidboss_spawnlist")
  */
 class Raidboss_spawnlist
 {
@@ -34,16 +34,14 @@ class Raidboss_spawnlist
      */
     private $respawn_time;
 
-//    /**
-//     *
-//     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Npc", mappedBy="idTemplate")
-//     */
-//    private $npc;
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Rb_name", mappedBy="rb_id")
+     */
 
-//    public function __construct()
-//    {
-//        $this->npc = new ArrayCollection();
-//    }
+    private $name;
+
+
 
     /**
      * Get id
@@ -86,8 +84,8 @@ class Raidboss_spawnlist
      *
      * @return \AppBundle\Entity\Npc
      */
-    public function getNpc()
+    public function getName()
     {
-        return $this->npc;
+        return $this->name;
     }
 }

@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
- * @ORM\Table(name="article")
+ * @ORM\Table(name="articles")
  */
 class Article
 {
@@ -55,8 +55,8 @@ class Article
     private $updated;
 
     public function __construct() {
-        $this->created = new \DateTime();
-        $this->updated = new \DateTime();
+        $this->created = date('Y-m-d H:i:s', time());
+        $this->updated = date('Y-m-d H:i:s', time());
     }
 
     public function getCreated() {
@@ -64,7 +64,15 @@ class Article
     }
 
     public function getUpdated() {
-      return $this-updated;
+      return $this->updated;
+    }
+
+    /**
+     * @param datetime $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
     }
 
     /**

@@ -18,8 +18,10 @@ class Raidboss_spawnlistRepository extends \Doctrine\ORM\EntityRepository
     public function getRBlist(){
 
         $return = $this->getEntityManager()
+//            ->createQuery(
+//                'SELECT rb, npc FROM AppBundle:Raidboss_spawnlist rb JOIN rb.npc npc');
             ->createQuery(
-                'SELECT rb, npc FROM AppBundle:Raidboss_spawnlist rb JOIN rb.npc npc');
+                'SELECT rb FROM AppBundle:Raidboss_spawnlist rb');
 
         return $return->getResult();
 

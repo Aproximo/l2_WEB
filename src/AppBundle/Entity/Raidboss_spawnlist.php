@@ -34,11 +34,11 @@ class Raidboss_spawnlist
      */
     private $respawn_time;
 
-    /**
-     *
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Npc", mappedBy="idTemplate")
-     */
-    private $npc;
+//    /**
+//     *
+//     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Npc", mappedBy="idTemplate")
+//     */
+//    private $npc;
 
 //    public function __construct()
 //    {

@@ -99,7 +99,7 @@ dump($request);
             $user->setPassword($password);
 
             // 4) save the User!
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager('login');
             $em->persist($user);
             $em->flush();
 

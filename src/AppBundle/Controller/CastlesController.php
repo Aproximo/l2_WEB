@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
-class CastlesChController extends Controller
+class CastlesController extends Controller
 {
     /**
      *  CastlesCh page
@@ -16,10 +16,10 @@ class CastlesChController extends Controller
      * @Template()
      */
     public function indexAction(){
-        $repo = $this->get('doctrine')->getRepository('AppBundle:Castle');
+        $repo = $this->get('doctrine')->getManager('game')->getRepository('AppBundle:Castle');
         $castle = $repo->getCastlelist();
 
-        $repo = $this->get('doctrine')->getRepository('AppBundle:ClanHall');
+        $repo = $this->get('doctrine')->getManager('game')->getRepository('AppBundle:ClanHall');
         $ch = $repo->getChlist();
 
 

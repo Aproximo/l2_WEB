@@ -16,7 +16,7 @@ class RaidBossesController extends Controller
      * @Template()
      */
     public function indexAction(){
-        $repo = $this->get('doctrine')->getRepository('AppBundle:Raidboss_spawnlist');
+        $repo = $this->get('doctrine')->getManager('game')->getRepository('AppBundle:Raidboss_spawnlist');
         $rb = $repo->getRBlist();
 
         return compact('rb');

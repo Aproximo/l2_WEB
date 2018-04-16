@@ -6,9 +6,10 @@
  * Time: 17:26
  */
 
-namespace AppBundle\Controller\Web;
+namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,9 +32,10 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request, AuthenticationUtils $authUtils)
     {
+
         // get the login error if there is one
         $error = $authUtils->getLastAuthenticationError();
-
+dump($request);
         // last username entered by the user
         $lastUsername = $authUtils->getLastUsername();
 
@@ -121,7 +123,7 @@ class SecurityController extends Controller
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-            $repo = $this->get('doctrine')->getRepository('AppBundle:User');
+            $repo = $this->get('doctrine')->getManager('login')->getRepository('AppBundle:User');
             $user = $repo->findByLogin($_POST["_username"]);
 
             if(!$user){

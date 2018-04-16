@@ -17,8 +17,7 @@ security:
             algorithm: bcrypt
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/user, roles: [ROLE_USER, ROLE_ADMIN] }
+        - { path: ^/(en|ru)/user, roles: [ROLE_USER] }
 
 
     firewalls:
@@ -32,9 +31,9 @@ security:
               anonymous: ~
               provider: user_provider
               form_login:
-                  login_path: /login
-                  check_path: /login
-                  default_target_path: /
+                  login_path: /en/login
+                  check_path: /en/login
+                  default_target_path: /en/user
               logout:
                    path:  /logout
                    target: /

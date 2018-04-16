@@ -1,10 +1,5 @@
 **TO DO**
 =====================
-- [X] Home
-    - [X] News
-- [ ] About
-- [X] Login
-    - [ ] Forgot password    
-- [X] Register 
-- [X] Download
-- [ ] FAQ
+add reCaptcha - https://github.com/syspay/login-recaptcha-bundle
+
+add for filed password in User table length 60+

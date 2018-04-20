@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
- * @ORM\Table(name="l2web.articles")
+ * @ORM\Table(name="articles")
  */
 class Article
 {

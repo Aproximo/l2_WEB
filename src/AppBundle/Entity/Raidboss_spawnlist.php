@@ -5,13 +5,9 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 
-
-
-
-
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\Raidboss_spawnlistRepository")
- * @ORM\Table(name="l2jgs.raidboss_spawnlist")
+ * @ORM\Table(name="raidboss_spawnlist")
  */
 class Raidboss_spawnlist
 {

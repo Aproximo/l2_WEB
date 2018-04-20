@@ -15,18 +15,16 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, ['required' => false, 'attr' => ['class' => 'text']])// name, type, add
+            ->add('title', null, ['required' => false, 'attr' => ['class' => 'text']])
             ->add('content', null, ['required' => false])
             ->add('category', EntityType::class, [
                 'class' => 'AppBundle:Category',
                 'choice_label' => 'name',
                 'expanded' => true,
                 'multiple' => false
-            ])
-        ;
-        dump($builder);
+            ]);
     }
-    
+
     /**
      * {@inheritdoc}
      */

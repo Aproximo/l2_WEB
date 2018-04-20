@@ -18,16 +18,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-    $user = $this->get('security.token_storage')->getToken()->getUser();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
 
-    $organisation = $this->get('security.token_storage')->getToken()->getUser()->getOrganisation();
-    $role = json_encode($user->getRoles());
-
+        $organisation = $this->get('security.token_storage')->getToken()->getUser()->getOrganisation();
+        $role = json_encode($user->getRoles());
         if ( strpos($role, "ROLE_ADMIN") ){
-            dump('here');
             return $this->redirectToRoute('admin_default');
         }else {
             return ['user' => $user, 'organisation' => $organisation];
         }
-    }    
+    }
 }

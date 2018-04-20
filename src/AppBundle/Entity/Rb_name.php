@@ -11,8 +11,8 @@ use Doctrine\ORM\Mapping\JoinColumn;
 
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\npcRepository")
- * @ORM\Table(name="l2web.raidboss_name")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NpcRepository")
+ * @ORM\Table(name="raidboss_name")
  *
  */
 class Rb_name

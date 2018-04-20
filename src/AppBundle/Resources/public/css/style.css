@@ -114,6 +114,10 @@ button {
   background-image: url(../img/button.png);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #e2dfd7;
+}
+
 .menu-item {
   color: #e2dfd7;
   display: inline-block;

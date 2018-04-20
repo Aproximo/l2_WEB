@@ -113,6 +113,7 @@ button {
   text-align: center;
   background-image: url(../img/button.png);
 }
+
 .menu-item {
   color: #e2dfd7;
   display: inline-block;
@@ -120,6 +121,10 @@ button {
   height: 31px;
   text-align: center;
   background-image: url(../img/button.png);
+}
+
+.menu-item.active {
+  background-image: url(../img/active_button.png);
 }
 
 a {
@@ -144,6 +149,6 @@ a {
   display: inline-block;
 }
 
-.active {
+.account-menu-item.active {
    text-decoration: underline;
 }

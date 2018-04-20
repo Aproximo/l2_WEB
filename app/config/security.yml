@@ -36,9 +36,8 @@ security:
                   username_parameter: "login_form[username]"
                   password_parameter: "login_form[password]"
                   csrf_parameter: "login_form[_token]"
-                  default_target_path: homepage
+                  default_target_path: news
                   google_recaptcha_secret: 6LfmakQUAAAAAI6OjWw_QmwuUOHzVQ5xq4FoSb-L
               logout:
                    path:  /logout
                    target: /
-

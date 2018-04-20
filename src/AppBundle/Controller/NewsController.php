@@ -10,14 +10,18 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class DefaultController extends Controller
+class NewsController extends Controller
 {
     /**
-     * @Route("/", name="root")
+     * article list page
+     *
+     * @Route("/news", name="news")
      * @Template()
      */
      public function indexAction(Request $request) {
-          return $this->redirectToRoute('news');
+         $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
+         $articles = $repo->findAllByLocale($request->getLocale());
+         return compact('articles');
      }
 
 }

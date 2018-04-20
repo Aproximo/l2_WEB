@@ -1,32 +1,12 @@
+{% extends 'AppBundle::security/account.html.twig' %}
 
-{% extends 'AppBundle::index.html.twig' %}
-
-{% block body %}
-    <h2>Password change</h2>
-
+{% block account_body %}
     {{ form_start(form) }}
 
     {{ form_row(form.username) }}
     {{ form_row(form.plainPassword.first) }}
     {{ form_row(form.plainPassword.second) }}
 
-    <button type="submit">Register!</button>
+    <button type="submit">{{'Change password'|trans}}</button>
     {{ form_end(form) }}
-
 {% endblock %}
-
-{% block title %}
-    Password change
-{% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-

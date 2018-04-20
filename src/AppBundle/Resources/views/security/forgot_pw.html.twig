@@ -1,31 +1,10 @@
+{% extends 'AppBundle::security/account.html.twig' %}
 
-{% extends 'AppBundle::index.html.twig' %}
-
-{% block body %}
-    <h2>Forgot password</h2>
-
+{% block account_body %}
     <form action="" method="post">
-        <label for="username">Username:</label>
+        <label for="username">Username</label>
         <input type="text" id="username" name="_username" value="" />
 
-        <button type="submit">login</button>
+        <button type="submit">Login</button>
     </form>
-
-
 {% endblock %}
-
-{% block title %}
-    Login Form
-{% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-

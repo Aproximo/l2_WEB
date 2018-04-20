@@ -12,7 +12,7 @@
     <link href="{{ asset('/bundles/app/css/style.css') }}" rel="stylesheet">
   </head>
 
-  <body>
+<body>
     <div class="background-container">
       <div class="menu">
         <a href="{{ path('homepage') }}"><button class="menu-item {% if app.request.attributes.get('_route') starts with 'news' %} active {% endif %}">{{'News'|trans}}</button></a>
@@ -22,20 +22,20 @@
         <a href="#"><button class="menu-item">{{'Forum'|trans}}</button></a>
       </div>
 
-    <div class="container">
-      <div>
-        {% for flash_message in app.session.flashBag.get('success') %}
-          <div class="alert alert-success">
-            {{ flash_message }}
-          </div>
-        {% endfor %}
-      </div>
+      <div class="container">
+        <div>
+          {% for flash_message in app.session.flashBag.get('success') %}
+            <div class="alert alert-success">
+              {{ flash_message }}
+            </div>
+          {% endfor %}
+        </div>
 
-      <div class="content">
-        {% block body %}{% endblock %}
+        <div class="content">
+          {% block body %}{% endblock %}
+        </div>
       </div>
-    </div>
-    <div class="footer"></div>
+      <div class="footer"></div>
   </div>
 
   <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>

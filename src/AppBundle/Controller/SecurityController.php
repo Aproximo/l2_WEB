@@ -32,13 +32,11 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request, AuthenticationUtils $authUtils)
     {
-
         // get the login error if there is one
         $error = $authUtils->getLastAuthenticationError();
-        dump($request);
+
         // last username entered by the user
         $lastUsername = $authUtils->getLastUsername();
-
 
         return ['last_username' => $lastUsername, 'error' => $error];
     }
@@ -80,7 +78,7 @@ class SecurityController extends Controller
 
 
     /**
-     * @Route("/user/changepassword", name="change_password")
+     * @Route("/changepassword", name="change_password")
      * @Template()
      */
     public function changePwAction (Request $request, UserPasswordEncoderInterface $passwordEncoder) {

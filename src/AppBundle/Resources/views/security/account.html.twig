@@ -1,0 +1,15 @@
+{% extends 'AppBundle::index.html.twig' %}
+
+{% block body %}
+    <div class="account-menu">
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'login' %} active {% endif %}" href="login"><h3>Login</h3></a>
+      <div class="account-menu-separator">|</div>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'registration' %} active {% endif %}" href="registration"><h3>Register</h3></a>
+      <div class="account-menu-separator">|</div>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'forgot_password' %} active {% endif %}" href="forgotpassword"><h3>Forgot Password</h3></a>
+      <div class="account-menu-separator">|</div>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'change_password' %} active {% endif %}" href="changepassword"><h3>Change Password</h3></a>
+    </div>
+    <hr/>
+    {% block account_body %}{% endblock %}
+{% endblock %}

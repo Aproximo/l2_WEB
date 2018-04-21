@@ -1,11 +1,21 @@
 {% extends 'AppBundle::index.html.twig' %}
 
 {% block body %}
-<h2>Downloads</h2>
+<h2>{{'Start Playing'|trans}}</h2>
 <hr/>
 
-<p><a href="http://l2hop.com/clients/Lineage2HF.torrent">Lineage 2 HF Torrent</a></p>
-<p><a href="">EN Patch</a></p>
-<p><a href="">RU Patch</a></p>
+<ol>
+<li><p>{{'Download the client from'|trans}} <a href="http://l2hop.com/clients/Lineage2HF.torrent">Lineage 2 HF Torrent</a></p></li>
+<li>
+  <p>{{'Download and unpack into the game folder one of the following patches'|trans}}:
+    <ul>
+      <li><a href="">{{'English Patch'|trans}}</a></li>
+      <li><a href="">{{'Russian Patch'|trans}}</a></li>
+    </ul>
+  </p>
+</li>
+<li><p>{{'Register your account'|trans}} <a href="{{ path('registration') }}">{{'here'|trans}}</a></p></li>
+<li><p>{{'Launch the game, create your character, find some friends and have fun!'|trans}}</p></li>
+</ol>
 
 {% endblock %}

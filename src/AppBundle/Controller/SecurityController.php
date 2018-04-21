@@ -42,7 +42,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/registration", name="user_registration")
+     * @Route("/registration", name="registration")
      * @Template()
      */
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)

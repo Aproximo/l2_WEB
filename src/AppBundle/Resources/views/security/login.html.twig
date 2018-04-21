@@ -6,18 +6,17 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {#{{ path('redirect') }}#}
-    <form action="" method="post">
-        <label for="username">Username</label>
+    <form method="post">
+        <label for="username">{{'Username'|trans}}</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-        <label for="password">Password</label>
+        <label for="password">{{'Password'|trans}}</label>
         <input type="password" id="password" name="_password" />
 
         <input type="hidden" name="_target_path" value="/" />
 
-        <button type="submit">Login</button>
-        <a href="{{ path('forgot_password') }}"><button>Forgot password</button></a>
+        <button type="submit">{{'Login'|trans}}</button>
+        <a href="{{ path('forgot_password') }}"><button>{{'Forgot password'|trans}}</button></a>
 
         <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
     </form>

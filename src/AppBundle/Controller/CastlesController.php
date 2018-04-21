@@ -12,7 +12,7 @@ class CastlesController extends Controller
     /**
      *  CastlesCh page
      *
-     * @Route("/castels", name="CastlesCh_list")
+     * @Route("/castles", name="castles")
      * @Template()
      */
     public function indexAction(){

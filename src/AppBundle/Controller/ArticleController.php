@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class NewsController extends Controller
+class ArticleController extends Controller
 {
     /**
      * article list page

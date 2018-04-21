@@ -12,7 +12,7 @@ class RaidBossesController extends Controller
     /**
      *  RaidBosses page
      *
-     * @Route("/rb", name="raid_bosses_list")
+     * @Route("/raidbosses", name="raidbosses")
      * @Template()
      */
     public function indexAction(){
@@ -23,10 +23,10 @@ class RaidBossesController extends Controller
     }
 
     /**
-     *  RaidBosses page
+     * RaidBosses page
      * sl - for tralling slash if its needed
      *
-     * @Route("/rb/{id}{sl}", name="raid_boss", defaults={"sl" : ""}, requirements={"id" : "[1-9][0-9]*","sl":"/?"})
+     * @Route("/raidbosses/{id}{sl}", name="raid_boss", defaults={"sl" : ""}, requirements={"id" : "[1-9][0-9]*","sl":"/?"})
      * @Template()
      */
     public function showAction($id){
@@ -37,7 +37,7 @@ class RaidBossesController extends Controller
             throw $this -> createNotFoundException('Wrong RB id');
         }
 
-        return compact('rb');;
+        return compact('rb');
     }
 
 

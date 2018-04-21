@@ -1,20 +1,16 @@
 {% extends 'AppBundle::index.html.twig' %}
 
-{% block title %}
-   ARTICLEs
-{% endblock %}
-
-
-
 {% block body %}
-<h2>Articles list</h2>
-    <hr>
+<h2>{{'News'|trans}}</h2>
+<hr/>
 
-    {% for article in articles %}
-        <h3><a href="{{ path('article_page', {id: article.id}) }}">{{ article.title }}</a></h3>
-        {{ article.content }}
-
-    {% endfor %}
+{% if articles is empty %}
+  <h3 class="center-text">{{'No news available'|trans}}</h3>
+{% else %}
+  {% for article in articles %}
+    <h3><a href="{{ path('news_article', {id: article.id}) }}">{{ article.title }}</a></h3>
+    <p>{{ article.content }}</p>
+  {% endfor %}
+{% endif %}
 
 {% endblock %}
-

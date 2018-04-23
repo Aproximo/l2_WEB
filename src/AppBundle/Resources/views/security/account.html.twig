@@ -8,9 +8,9 @@
       <div class="account-menu-separator">|</div>
       <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'registration' %} active {% endif %}" href="{{ path('registration') }}"><h3>{{'Register'|trans}}</h3></a>
       <div class="account-menu-separator">|</div>
-      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'forgot_password' %} active {% endif %}" href="{{ path('forgotpassword') }}"><h3>{{'Forgot Password'|trans}}</h3></a>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'forgotpassword' %} active {% endif %}" href="{{ path('forgotpassword') }}"><h3>{{'Forgot Password'|trans}}</h3></a>
       <div class="account-menu-separator">|</div>
-      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'change_password' %} active {% endif %}" href="{{ path('changepassword') }}"><h3>{{'Change Password'|trans}}</h3></a>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'changepassword' %} active {% endif %}" href="{{ path('changepassword') }}"><h3>{{'Change Password'|trans}}</h3></a>
     </div>
     <hr/>
     {% block account_body %}{% endblock %}

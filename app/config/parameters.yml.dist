@@ -2,23 +2,23 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_host_login: *
-    database_port_login: *
-    database_name_login: *
-    database_user_login: *
-    database_password_login: *
+    database_host_login: 127.0.0.1
+    database_port_login: ~
+    database_name_login: l2
+    database_user_login: root
+    database_password_login: ~
 
-    database_host_game: *
-    database_port_game: *
-    database_name_game: *
-    database_user_game: *
-    database_password_game: *
+    database_host_game: 127.0.0.1
+    database_port_game: ~
+    database_name_game: l2
+    database_user_game: root
+    database_password_game: ~
 
-    database_host_web: *
-    database_port_web: *
-    database_name_web: *
-    database_user_web: *
-    database_password_web: *
+    database_host_web: 127.0.0.1
+    database_port_web: ~
+    database_name_web: l2
+    database_user_web: root
+    database_password_web: ~
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
@@ -28,7 +28,7 @@ parameters:
     mailer_port: 465
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    forum_url: *
+    forum_url: ~
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt

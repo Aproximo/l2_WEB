@@ -19,7 +19,7 @@ class ArticleController extends Controller
      * @Template()
      */
      public function indexAction(Request $request) {
-         $repo = $this->get('doctrine')->getRepository('AppBundle:Article');
+         $repo = $this->get('doctrine')->getRepository('AppBundle:Article', 'web');
          $articles = $repo->findAllByLocale($request->getLocale());
          return compact('articles');
      }

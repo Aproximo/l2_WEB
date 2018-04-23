@@ -18,7 +18,12 @@
         <a href="{{ path('about') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'about' %} active {% endif %}">{{'About'|trans}}</button></a>
         <a href="{{ path('castles') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'castles' %} active {% endif %}">{{'Castles'|trans}}</button></a>
         <a href="{{ path('raidbosses') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'raidbosses' %} active {% endif %}">{{'Raid Bosses'|trans}}</button></a>
-        <a href="{{ forum_url }}"><button class="menu-item">{{'Forum'|trans}}</button></a>
+        <a href="{{ forum_url }}" target="_blank"><button class="menu-item">{{'Forum'|trans}}</button></a>
+
+        <div class="lang-menu">
+          <a href="{{ path(app.request.get('_route'), { '_locale': 'en' }) }}"><img class="lang-item" src="{{asset('/bundles/app/img/en-flag.png')}}"/></a>
+          <a href="{{ path(app.request.get('_route'), { '_locale': 'ru' }) }}"><img class="lang-item" src="{{asset('/bundles/app/img/ru-flag.png')}}"/></a>
+        </div>
       </div>
 
       <div class="container">

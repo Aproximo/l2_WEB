@@ -101,9 +101,9 @@ input {
   width: 100%;
   margin: auto auto;
   padding: 5px 15px;
+  background-color: #2e231d;
   border-style: solid;
   border-width: 1px 1px 1px 1px;
-  background-color: #2e231d;
   border-color: #b0a08a;
 }
 
@@ -124,6 +124,19 @@ button {
   height: 31px;
   text-align: center;
   background-image: url(../img/button.png);
+}
+
+.lang-menu {
+  float: left;
+  padding: 2px 4px 2px 4px;
+}
+
+.lang-item {
+  width: 60px;
+  height: 35px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: black;
 }
 
 h1, h2, h3, h4, h5, h6, p {

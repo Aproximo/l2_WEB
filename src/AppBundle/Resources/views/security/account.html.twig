@@ -1,17 +1,21 @@
 {% extends 'AppBundle::index.html.twig' %}
 
 {% block body %}
+    {% if app.user %}
+    <div class="account-menu">
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'logout' %} active {% endif %}" href="{{ path('logout') }}"><h3>{{'Logout'|trans}}</h3></a>
+      <div class="account-menu-separator">|</div>
+      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'changepassword' %} active {% endif %}" href="{{ path('changepassword') }}"><h3>{{'Change Password'|trans}}</h3></a>
+    </div>
+    {% else %}
     <div class="account-menu">
       <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'login' %} active {% endif %}" href="{{ path('login') }}"><h3>{{'Login'|trans}}</h3></a>
-      <div class="account-menu-separator">|</div>
-      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'logout' %} active {% endif %}" href="{{ path('logout') }}"><h3>{{'Logout'|trans}}</h3></a>
       <div class="account-menu-separator">|</div>
       <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'registration' %} active {% endif %}" href="{{ path('registration') }}"><h3>{{'Register'|trans}}</h3></a>
       <div class="account-menu-separator">|</div>
       <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'forgotpassword' %} active {% endif %}" href="{{ path('forgotpassword') }}"><h3>{{'Forgot Password'|trans}}</h3></a>
-      <div class="account-menu-separator">|</div>
-      <a class="account-menu-item {% if app.request.attributes.get('_route') ends with 'changepassword' %} active {% endif %}" href="{{ path('changepassword') }}"><h3>{{'Change Password'|trans}}</h3></a>
     </div>
+    {% endif %}
     <hr/>
     {% block account_body %}{% endblock %}
 {% endblock %}

@@ -2,11 +2,15 @@
 
 {% block account_body %}
     {{ form_start(form) }}
-
+    <div class="center-text">
+      <div class="border-pane">
     {{ form_row(form.username) }}
     {{ form_row(form.plainPassword.first) }}
     {{ form_row(form.plainPassword.second) }}
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
 
-    <button type="submit">{{'Change Password'|trans}}</button>
+      <button type="submit">{{'Change Password'|trans}}</button>
+    </div>
     {{ form_end(form) }}
 {% endblock %}

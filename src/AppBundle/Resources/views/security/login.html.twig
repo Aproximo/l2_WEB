@@ -7,18 +7,21 @@
     {% endif %}
 
     <form method="post">
-        <label for="username">{{'Username'|trans}}</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+      <div class="center-text ">
+          <div class="border-pane">
+            <label for="username">{{'Username'|trans}}</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+            <label for="password">{{'Password'|trans}}</label>
+            <input type="password" id="password" name="_password" />
+          </div>
 
-        <label for="password">{{'Password'|trans}}</label>
-        <input type="password" id="password" name="_password" />
+          <div class="recaptcha-holder">
+            <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
+          </div>
 
         <input type="hidden" name="_target_path" value="/" />
-
         <button type="submit">{{'Login'|trans}}</button>
-        <a href="{{ path('forgot_password') }}"><button>{{'Forgot password'|trans}}</button></a>
-
-        <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
+      </div>
     </form>
 
 

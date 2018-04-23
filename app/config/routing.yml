@@ -5,3 +5,6 @@ app_web_locale:
       _locale: en|ru|
     prefix:   /{_locale}
     defaults: { _locale: en}
+
+logout:
+    path: /logout

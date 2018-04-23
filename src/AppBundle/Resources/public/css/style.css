@@ -126,6 +126,38 @@ button {
   background-image: url(../img/button.png);
 }
 
+.recaptcha-holder {
+  display: inline;
+  margin: 0 auto;
+}
+
+.border-pane {
+  max-width: 180px;
+  padding: 6px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #e2dfd7;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.border-pane input {
+  margin: 5px;
+}
+
+.border-pane label {
+  margin: 5px;
+}
+
+.border-pane .row {
+  margin: 3px 0px;
+}
+
+.border-pane input {
+  margin:auto;
+}
+
 .lang-menu {
   float: left;
   padding: 2px 4px 2px 4px;

@@ -9,12 +9,18 @@
     {#{{ path('redirect') }}#}
 
     {{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
+    <div class="center-text">
+      <div class="border-pane">
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword.first) }}
+        {{ form_row(form.plainPassword.second) }}
+      </div>
 
-    <button type="submit">{{'Register'|trans}}</button>
+      <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
+
+      <button type="submit">{{'Register'|trans}}</button>
+    </div>
     {{ form_end(form) }}
 
 {% endblock %}

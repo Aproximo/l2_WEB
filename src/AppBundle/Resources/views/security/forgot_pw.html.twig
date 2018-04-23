@@ -2,9 +2,13 @@
 
 {% block account_body %}
     <form action="" method="post">
-        <label for="username">{{'Username'|trans}}</label>
-        <input type="text" id="username" name="_username" value="" />
-
+      <div class="center-text">
+        <div class="border-pane">
+          <label for="username">{{'Username'|trans}}</label>
+          <input type="text" id="username" name="_username" value="" />
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
         <button type="submit">{{'Remind Me'|trans}}</button>
+      </div>
     </form>
 {% endblock %}

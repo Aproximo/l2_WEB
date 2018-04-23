@@ -27,7 +27,7 @@ class SecurityController extends Controller
 {
 
     /**
-     * @Route("/login", name="user_login")
+     * @Route("/login", name="login")
      * @Template()
      */
     public function loginAction(Request $request, AuthenticationUtils $authUtils)
@@ -78,7 +78,7 @@ class SecurityController extends Controller
 
 
     /**
-     * @Route("/changepassword", name="change_password")
+     * @Route("/changepassword", name="changepassword")
      * @Template()
      */
     public function changePwAction (Request $request, UserPasswordEncoderInterface $passwordEncoder) {
@@ -112,7 +112,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/forgotpassword", name="forgot_password")
+     * @Route("/forgotpassword", name="forgotpassword")
      * @Template()
      */
     public function forgotPwAction (Request $request, \Swift_Mailer $mailer) {
@@ -170,16 +170,5 @@ class SecurityController extends Controller
 
         return [];
     }
-
-
-    /**
-     * @Route("/logout", name="security_logout")
-     * @Template()
-     */
-    public function logoutAction()
-    {
-        return [];
-    }
-
 
 }

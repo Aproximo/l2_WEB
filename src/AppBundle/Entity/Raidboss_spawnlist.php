@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\Raidboss_spawnlistRepository")
- * @ORM\Table(name="raidboss_spawnlist")
+ * @ORM\Table(name="raidboss_spawnlist", schema="web")
  */
 class Raidboss_spawnlist
 {

@@ -361,7 +361,7 @@ $hasMinorProblems = (bool) count($minorProblems);
             <div class="sf-reset">
                 <div class="block">
                     <div class="symfony-block-content">
-                        <h1 class="title">Configuration Checker</h2>
+                        <h1 class="title">Configuration Checker</h1>
                         <p>
                             This script analyzes your system to check whether is
                             ready to run Symfony applications.

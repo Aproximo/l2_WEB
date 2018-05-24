@@ -16,8 +16,8 @@
         <a href="{{ path('login') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'login' or app.request.attributes.get('_route') ends with 'registration' or app.request.attributes.get('_route') ends with 'forgot_password' or app.request.attributes.get('_route') ends with 'change_password'%} active {% endif %}">{{'Account'|trans}}</button></a>
         <a href="{{ path('downloads') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'downloads' %} active {% endif %}">{{'Start Playing'|trans}}</button></a>
         <a href="{{ path('about') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'about' %} active {% endif %}">{{'About'|trans}}</button></a>
-        <a href="{{ path('castles') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'castles' %} active {% endif %}">{{'Castles'|trans}}</button></a>
-        <a href="{{ path('raidbosses') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'raidbosses' %} active {% endif %}">{{'Raid Bosses'|trans}}</button></a>
+<!--        <a href="{{ path('castles') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'castles' %} active {% endif %}">{{'Castles'|trans}}</button></a>
+        <a href="{{ path('raidbosses') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'raidbosses' %} active {% endif %}">{{'Raid Bosses'|trans}}</button></a> -->
         <a href="{{ forum_url }}" target="_blank"><button class="menu-item">{{'Forum'|trans}}</button></a>
 
         <div class="lang-menu">

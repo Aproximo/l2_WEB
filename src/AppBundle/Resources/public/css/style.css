@@ -97,6 +97,7 @@ input {
 }
 
 .content {
+  overflow: auto;
   height: 100%;
   width: 100%;
   margin: auto auto;
@@ -109,6 +110,7 @@ input {
 
 @media only screen and (min-width: 768px) {
   .content {
+    overflow: auto;
     height: 700px;
     width: 80%;
     margin: 140px auto;

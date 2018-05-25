@@ -19,7 +19,7 @@ class AboutController extends Controller
     public function indexAction(Request $request) {
       $lang = $request->getLocale();
       $fileLocator = $this->get('file_locator');
-      $path = $fileLocator->locate("@AppBundle/Resources/translations/about.$lang.txt");
+      $path = $fileLocator->locate("@AppBundle/Resources/custom/about.$lang.txt");
       return ['content' => file_get_contents($path)];
     }
 

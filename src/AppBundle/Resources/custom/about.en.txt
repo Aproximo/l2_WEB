@@ -1,0 +1,82 @@
+<h3>Lineage 2 Hardcore Project (High Five)</h3>
+
+<hr/>
+
+<h4>Summary</h4>
+<p>
+Anti-level grinding world! Everyone and everything is level 85!</br>
+Anti-solo! Mobs are stronger, after B grade it is really hard to hunt them solo at all!</br>
+No NPC buffers, you better bring your friends along!</br>
+</br>
+No levels! All progression is in gear, profession changes and skill points (20x),</br>
+If you want to on board your friends new character, all you really need is to give him some gear and he can be playing with you in no time!</br>
+No need to grind 70+ levels to be useful!</br>
+</br>
+High rate Raid Boss drops, actual drop worth fighting for!</br>
+Everyone can drop everything! No more augmented +16 Homunkulus Sword PK, it will be dropped!</br>
+</br>
+No more subclass grinding, subskills are removed, subclasses can reach 85 level and can be played as a main class!</br>
+</br>
+No D grade or above items in shops, no common and shadow items! You need to craft or hunt!</br>
+Most instances are removed to motivate open hunting grounds contestation!</br>
+</p>
+
+<h4>Hardcore Gameplay</h4>
+<ul>
+  <li>All players are 85 level from the start</li>
+  <li>Subclasses are 85 level from the start</li>
+  <li>Sub-skills are removed</li>
+  <li>All mobs are 85 level and graded by their stats and drop</li>
+  <li>Professions can be acquired trough quests or bough via adena</li>
+  <li>Most transformations are removed</li>
+  <li>No NPC buffers</li>
+  <li>Herb potions are removed</li>
+  <li>Death penalty removed</li>
+  <li>Cloaks can be worn with A and S grade sets</li>
+  <li>Subclass and Noble are acquired via quests</li>
+</ul>
+
+<h4>Hardcore Crafting</h4>
+<ul>
+  <li>All items with D grade and above are removed from shops</li>
+  <li>All manor and spoil skills can be used on all mobs</li>
+  <li>Newbie helper/Dimensional Merchant and Item Broker are removed</li>
+  <li>Offline trade is enabled with .offline command</li>
+  <li>All Shadow/Common items are removed</li>
+</ul>
+
+<h4>Hardcore PvP</h4>
+<ul>
+  <li>NPC Death Drop: 10%</li>
+  <li>PvP Death Drop: 20%</li>
+  <li>Clan War Death Drop: 30%</li>
+  <li>Siege Death Drop: 15%</li>
+  <li>PK Death Drop: 80%</li>
+</ul>
+
+<p><b>Every drop has a 10% chance of item crystallization</b></p>
+<p><b>Augmented items can be dropped/traded/sold</b></p>
+
+<h4>Hardcore PvE</h4>
+<ul>
+  <li>Raid Boss drops are actually worth fighting for</li>
+  <li>Regular mobs have good drop chances</li>
+  <li>Kamaloka, Pailaka, Chamber of Delusions, Fantasy Island, Hellbound and Gracia are removed</li>
+  <li>All mobs are 3x stronger</li>
+  <li>All bosses are instanceless</li>
+  <li>All town guards are 5x stonger</li>
+</ul>
+
+<h4>Rates</h4>
+<ul>
+  <li>Exp 1x</li>
+  <li>SP 20x</li>
+  <li>Adena 10x</li>
+  <li>Manor 5x</li>
+  <li>Drop 30x</li>
+  <li>Raid 30x</li>
+  <li>Spoil 20x</li>
+  <li>Quest 1x</li>
+</ul>
+
+<hr/>

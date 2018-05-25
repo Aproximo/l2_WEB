@@ -3,10 +3,6 @@
   max-height: 100%;
 }
 
-p {
-  font-family: sans-serif;
-}
-
 .center-text {
   text-align: center;
 }
@@ -88,6 +84,7 @@ input {
   border-width: 1px 0px 0px 0px;
   border-color: #b0a08a;
 }
+
 .menu {
   width: 100%;
   margin: 0 auto;
@@ -97,7 +94,8 @@ input {
 }
 
 .content {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   margin: auto auto;
@@ -110,7 +108,8 @@ input {
 
 @media only screen and (min-width: 768px) {
   .content {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 700px;
     width: 80%;
     margin: 140px auto;
@@ -161,7 +160,8 @@ button {
 }
 
 .lang-menu {
-  float: left;
+  display: inline;
+  width: 15%;
   padding: 2px 4px 2px 4px;
 }
 
@@ -173,8 +173,21 @@ button {
   border-color: black;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   color: #e2dfd7;
+}
+
+p {
+  color: #fffdf9;
+}
+
+pre {
+  font-family: liberation-serif;
+  color: #fffdf9;
+}
+
+li {
+  color: #fffdf9;
 }
 
 .menu-item {
@@ -188,6 +201,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .menu-item.active {
   background-image: url(../img/active_button.png);
+}
+
+.navigation-menu {
+  text-align: left;
+  display: inline;
+  width: 85%;
 }
 
 a {

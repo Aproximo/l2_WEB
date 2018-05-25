@@ -30,7 +30,7 @@
         "symfony/options-resolver": "^3.4",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
-        "symfony/symfony": "3.3.*",
+        "symfony/symfony": "3.4.8",
         "syspay/login-recaptcha-bundle": "^2.1",
         "twig/twig": "^1.0||^2.0"
     },

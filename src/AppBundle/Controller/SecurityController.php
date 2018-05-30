@@ -8,17 +8,14 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\Security\Core\User\UserCheckerInterface;
+use ReCaptcha\ReCaptcha;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ChangePasswordType;
-use AppBundle\Form\ForgotPasswordType;
 
 
 
@@ -55,7 +52,19 @@ class SecurityController extends Controller
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Check if reCaptcha valid
+            $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
+            $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
+            if (!$resp->isSuccess()) {
+                // Do something if the submit wasn't valid ! Use the message to show something
+                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+                return ['form' => $form->createView(), 'error' => $message];
+            }
+
 
             // 3) Encode the password (you could also do this via Doctrine listener)
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
@@ -72,7 +81,7 @@ class SecurityController extends Controller
             return $this->redirectToRoute('news');
         }
 
-        return ['form' => $form->createView()];
+        return ['form' => $form->createView(), 'error' => NULL];
 
     }
 
@@ -92,6 +101,16 @@ class SecurityController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // Check if reCaptcha valid
+            $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
+            $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
+            if (!$resp->isSuccess()) {
+                // Do something if the submit wasn't valid ! Use the message to show something
+                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+                return ['form' => $form->createView(), 'error' => $message];
+            }
+
             // 3) Encode the password (you could also do this via Doctrine listener)
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
@@ -108,7 +127,7 @@ class SecurityController extends Controller
         }
 
 
-        return ['form' => $form->createView()];
+        return ['form' => $form->createView(), 'error' => NULL];
     }
 
     /**
@@ -129,7 +148,19 @@ class SecurityController extends Controller
             }
 
             //-------------
-            $name = "Aproximo";
+
+            // Check if reCaptcha valid
+            $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
+            $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
+            if (!$resp->isSuccess()) {
+                // Do something if the submit wasn't valid ! Use the message to show something
+                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+                return ['error' => $message];
+            }
+
+
+            $name = "Aproximo"; // TODO chang mail parameters
             $message = (new \Swift_Message('Hello Email'))
                 ->setFrom('Romanyk94@gmail.com')
                 ->setTo('romaniuk.o@organicstandard.com.ua')
@@ -162,13 +193,13 @@ class SecurityController extends Controller
             //-------
             dump($mailer);
 //            die();
-            return [];
+            return ['error' => NULL];
 
 
         }
 
 
-        return [];
+        return ['error' => NULL];
     }
 
 }

@@ -7,7 +7,9 @@
     {#{% if is_granted('ROLE_ADMIN') %}#}
     {#{% else %} {{ path('admin_default') }} {% endif %}#}
     {#{{ path('redirect') }}#}
-
+{% if (error) %}
+    <div>{{ error }}</div>
+{% endif %}
     {{ form_start(form) }}
     <div class="center-text">
       <div class="border-pane">

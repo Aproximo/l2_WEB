@@ -1,3 +1,5 @@
+imports:
+  - { resource: parameters.yml }
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
@@ -31,13 +33,10 @@ security:
               anonymous: ~
               provider: user_provider
               form_login_captcha:
-                  login_path: user_login
-                  check_path: user_login
-                  username_parameter: "login_form[username]"
-                  password_parameter: "login_form[password]"
-                  csrf_parameter: "login_form[_token]"
+                  login_path: login
+                  check_path: login
                   default_target_path: news
-                  google_recaptcha_secret: 6LfmakQUAAAAAI6OjWw_QmwuUOHzVQ5xq4FoSb-L
+                  google_recaptcha_secret: '%reCaptcha_secret%'
               logout:
                    path:  /logout
                    target: /

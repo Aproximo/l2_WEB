@@ -1,6 +1,12 @@
 {% extends 'AppBundle::security/account.html.twig' %}
 
 {% block account_body %}
+
+    {% if (error) %}
+        <div>{{ error }}</div>
+    {% endif %}
+
+
     {{ form_start(form) }}
     <div class="center-text">
       <div class="border-pane">

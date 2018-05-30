@@ -30,5 +30,7 @@ parameters:
 
     forum_url: ~
 
+    reCaptcha_secret: ~
+
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt

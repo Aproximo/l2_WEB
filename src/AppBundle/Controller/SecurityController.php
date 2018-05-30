@@ -8,6 +8,8 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use ReCaptcha\ReCaptcha;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -135,30 +137,23 @@ class SecurityController extends Controller
      * @Template()
      */
     public function forgotPwAction (Request $request, \Swift_Mailer $mailer) {
-
-
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
-            $repo = $this->get('doctrine')->getManager('login')->getRepository('AppBundle:User');
-            $user = $repo->findByLogin($_POST["_username"]);
-
-            if(!$user){
-                throw $this -> createNotFoundException('User not found');
-            }
-
-            //-------------
-
             // Check if reCaptcha valid
             $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
             $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
 
             if (!$resp->isSuccess()) {
                 // Do something if the submit wasn't valid ! Use the message to show something
-                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again";
                 return ['error' => $message];
             }
 
+            $repo = $this->get('doctrine')->getManager('login')->getRepository('AppBundle:User');
+            $user = $repo->findByLogin($_POST["_username"]);
+
+            if(!$user){
+                return ['error' => 'Incorrect request'];
+            }
 
             $name = "Aproximo"; // TODO chang mail parameters
             $message = (new \Swift_Message('Hello Email'))
@@ -166,38 +161,18 @@ class SecurityController extends Controller
                 ->setTo('romaniuk.o@organicstandard.com.ua')
                 ->setBody(
                     $this->renderView(
-                    // app/Resources/views/Emails/registration.html.twig
                         'Emails/registration.html.twig',
                         array('name' => $name)
                     ),
                     'text/html'
-                )
-
-                /*
-                 * If you also want to include a plaintext version of the message
-                ->addPart(
-                    $this->renderView(
-                        'emails/registration.txt.twig',
-                        array('name' => $name)
-                    ),
-                    'text/plain'
-                )
-                */
-            ;
+                );
 
             if (!$mailer->send($message)){
-                dump($mailer);
-            die();
+                return ['error' => 'Could not send recovery email, please contact the administration'];
             }
 
-            //-------
-            dump($mailer);
-//            die();
             return ['error' => NULL];
-
-
         }
-
 
         return ['error' => NULL];
     }

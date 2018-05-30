@@ -127,9 +127,20 @@ button {
   background-image: url(../img/button.png);
 }
 
-.recaptcha-holder {
-  display: inline;
-  margin: 0 auto;
+.g-recaptcha {
+  margin: 15px auto;
+  width: 43%;
+}
+
+.online {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: #2e231d;
+  border-style: round;
+  border-width: 1px 1px 1px 1px;
+  border-color: #b0a08a;
+  border-radius: 5px;
 }
 
 .border-pane {
@@ -156,13 +167,13 @@ button {
 }
 
 .border-pane input {
-  margin:auto;
+  margin: 0 auto;
 }
 
 .lang-menu {
   display: inline;
-  width: 15%;
-  padding: 2px 4px 2px 4px;
+  float: left;
+  margin: 2px;
 }
 
 .lang-item {
@@ -171,6 +182,7 @@ button {
   border-style: solid;
   border-width: 1px 1px 1px 1px;
   border-color: black;
+  vertical-align: middle;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -203,8 +215,11 @@ li {
   background-image: url(../img/active_button.png);
 }
 
+.flash-box {
+  text-align: center;
+}
+
 .navigation-menu {
-  text-align: left;
   display: inline;
   width: 85%;
 }

@@ -17,5 +17,8 @@
     </div>
     {% endif %}
     <hr/>
+    {% if error %}
+        <div class="flash-box"><p>{{ error|trans }}</p></div>
+    {% endif %}
     {% block account_body %}{% endblock %}
 {% endblock %}

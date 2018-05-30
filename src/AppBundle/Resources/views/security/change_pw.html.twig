@@ -1,18 +1,12 @@
 {% extends 'AppBundle::security/account.html.twig' %}
 
 {% block account_body %}
-
-    {% if (error) %}
-        <div>{{ error }}</div>
-    {% endif %}
-
-
     {{ form_start(form) }}
     <div class="center-text">
       <div class="border-pane">
-    {{ form_row(form.username) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
+      {{ form_row(form.username) }}
+      {{ form_row(form.plainPassword.first) }}
+      {{ form_row(form.plainPassword.second) }}
       </div>
       <div class="g-recaptcha" data-sitekey="6LfmakQUAAAAAHNwlmQYbMB6NVDFA0I_nnFgqMyk"></div>
 

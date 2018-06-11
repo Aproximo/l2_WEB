@@ -1,6 +1,5 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://localhost/app_dev.php/api/users/", false);
-xhr.send();
-
-console.log(xhr.status);
-console.log(xhr.response);
+$(document).ready(function() {
+  $.getJSON("current_online", function(data) {
+    $("#online").text(data.online);
+  });
+});

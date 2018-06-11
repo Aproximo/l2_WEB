@@ -16,8 +16,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ChangePasswordType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 
 
@@ -136,8 +134,8 @@ class SecurityController extends Controller
      * @Route("/forgotpassword", name="forgotpassword")
      * @Template()
      */
-    public function forgotPwAction (Request $request, \Swift_Mailer $mailer) {
-
+    public function forgotPwAction (Request $request, \Swift_Mailer $mailer)
+    {
         // Check if reCaptcha valid
         $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
         $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
@@ -148,15 +146,13 @@ class SecurityController extends Controller
             return ['error' => $message];
         }
 
-
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 
             $repo = $this->get('doctrine')->getManager('login')->getRepository('AppBundle:User');
             $user = $repo->findByLogin($_POST["_username"]);
 
             if(!$user){
-                throw $this -> createNotFoundException('User not found');
+                return ['error' => 'Incorrect request'];
             }
 
             $message = (new \Swift_Message('Hello Email'))
@@ -164,38 +160,18 @@ class SecurityController extends Controller
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(
-                    // app/Resources/views/Emails/registration.html.twig
                         'Emails/registration.html.twig',
                         array('name' => $user->getUsername())
                     ),
                     'text/html'
-                )
-
-                /*
-                 * If you also want to include a plaintext version of the message
-                ->addPart(
-                    $this->renderView(
-                        'emails/registration.txt.twig',
-                        array('name' => $name)
-                    ),
-                    'text/plain'
-                )
-                */
-            ;
+                );
 
             if (!$mailer->send($message)){
-                dump($mailer);
-            die();
+                return ['error' => 'Could not send recovery email, please contact the administration'];
             }
 
-            //-------
-            dump($mailer);
-//            die();
             return ['error' => NULL];
-
-
         }
-
 
         return ['error' => NULL];
     }

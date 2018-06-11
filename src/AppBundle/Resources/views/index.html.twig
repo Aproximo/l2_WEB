@@ -26,18 +26,10 @@
           <a href="{{ path('raidbosses') }}"><button class="menu-item {% if app.request.attributes.get('_route') ends with 'raidbosses' %} active {% endif %}">{{'Raid Bosses'|trans}}</button></a> -->
           <a href="{{ forum_url }}" target="_blank"><button class="menu-item">{{'Forum'|trans}}</button></a>
         </div>
-
       </div>
 
       <div class="container">
-        <div>
-          {% for flash_message in app.session.flashBag.get('success') %}
-            <div class="alert alert-success">
-              {{ flash_message }}
-            </div>
-          {% endfor %}
-        </div>
-
+        <div class="online">{{ 'Online'|trans }}: <span id="online">0</span></div>
         <div class="content">
           {% block body %}{% endblock %}
         </div>
@@ -45,7 +37,8 @@
       <div class="footer"></div>
   </div>
 
-  <script src="{{ asset('/bundles/app/js/jquery.min.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{{ asset('/bundles/app/js/script.js') }}"></script>
   <script src='https://www.google.com/recaptcha/api.js?hl={{ app.request.locale  }}'></script>
 
 </body>

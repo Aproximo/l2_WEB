@@ -16,7 +16,6 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
      * @return array
      */
     public function getRoles($value){
-
         $return = $this->getEntityManager()
             ->createQuery(
                 "SELECT user FROM AppBundle:User user  WHERE user.roles LIKE :value "
@@ -25,9 +24,7 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
 
         return $return;
-
     }
-
 
 
     /**

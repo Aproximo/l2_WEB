@@ -16,6 +16,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ChangePasswordType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 
 
@@ -136,6 +138,16 @@ class SecurityController extends Controller
      */
     public function forgotPwAction (Request $request, \Swift_Mailer $mailer) {
 
+        // Check if reCaptcha valid
+        $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
+        $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+
+        if (!$resp->isSuccess()) {
+            // Do something if the submit wasn't valid ! Use the message to show something
+            $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
+            return ['error' => $message];
+        }
+
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -147,28 +159,14 @@ class SecurityController extends Controller
                 throw $this -> createNotFoundException('User not found');
             }
 
-            //-------------
-
-            // Check if reCaptcha valid
-            $recaptcha = new ReCaptcha($this->container->getParameter('reCaptcha_secret'));
-            $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
-
-            if (!$resp->isSuccess()) {
-                // Do something if the submit wasn't valid ! Use the message to show something
-                $message = "The reCAPTCHA wasn't entered correctly. Go back and try it again.";
-                return ['error' => $message];
-            }
-
-
-            $name = "Aproximo"; // TODO chang mail parameters
             $message = (new \Swift_Message('Hello Email'))
-                ->setFrom('Romanyk94@gmail.com')
-                ->setTo('romaniuk.o@organicstandard.com.ua')
+                ->setFrom($this->container->getParameter('mailer_from'))
+                ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView(
                     // app/Resources/views/Emails/registration.html.twig
                         'Emails/registration.html.twig',
-                        array('name' => $name)
+                        array('name' => $user->getUsername())
                     ),
                     'text/html'
                 )
